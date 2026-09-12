@@ -1,0 +1,6 @@
+# No single clean API for this category -- research and add real entries.
+# Format (one list item per entity):
+# - name: <official product name>
+#   url: <official product page>
+#   description: ""
+#   <any extra field becomes metadata, e.g. maker, release_year, runs_model>

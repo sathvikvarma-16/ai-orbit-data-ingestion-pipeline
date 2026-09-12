@@ -1,0 +1,32 @@
+- name: ChatGPT
+  url: https://chatgpt.com
+  description: ""
+  maker: OpenAI
+- name: Claude
+  url: https://claude.ai
+  description: ""
+  maker: Anthropic
+- name: Gemini
+  url: https://gemini.google.com
+  description: ""
+  maker: Google
+- name: Midjourney
+  url: https://www.midjourney.com
+  description: ""
+  maker: Midjourney
+- name: GitHub Copilot
+  url: https://github.com/features/copilot
+  description: ""
+  maker: GitHub / Microsoft
+- name: Perplexity
+  url: https://perplexity.ai
+  description: ""
+  maker: Perplexity AI
+- name: Runway
+  url: https://runwayml.com
+  description: ""
+  maker: Runway
+- name: ElevenLabs
+  url: https://elevenlabs.io
+  description: ""
+  maker: ElevenLabs

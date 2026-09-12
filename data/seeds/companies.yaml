@@ -1,0 +1,40 @@
+# Starter examples with verified official domains (double-check before
+# submitting -- domains do change). Add more via your own research to reach
+# the record count your chosen module needs. Leave description blank ("") --
+# the pipeline's LLM step (Step 3) fills it in from these facts.
+- name: OpenAI
+  url: https://openai.com
+  description: ""
+  sector: AI research and products
+- name: Anthropic
+  url: https://anthropic.com
+  description: ""
+  sector: AI safety and research
+- name: Google DeepMind
+  url: https://deepmind.google
+  description: ""
+  sector: AI research (Google)
+- name: Mistral AI
+  url: https://mistral.ai
+  description: ""
+  sector: Open-weight language models
+- name: xAI
+  url: https://x.ai
+  description: ""
+  sector: AI research and products
+- name: Cohere
+  url: https://cohere.com
+  description: ""
+  sector: Enterprise language models
+- name: Stability AI
+  url: https://stability.ai
+  description: ""
+  sector: Open generative AI
+- name: Perplexity AI
+  url: https://perplexity.ai
+  description: ""
+  sector: AI-powered search
+- name: Hugging Face
+  url: https://huggingface.co
+  description: ""
+  sector: AI model hosting and community

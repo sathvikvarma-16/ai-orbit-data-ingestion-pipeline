@@ -1,0 +1,215 @@
+[
+  {
+    "id": "f1860198-6ce9-54c9-92bb-00f8a7c97500",
+    "entity_type": "model",
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "description": "zero-shot-image-classification",
+    "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+    "categories": [
+      "Models"
+    ],
+    "source": {
+      "name": "Hugging Face",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    "metadata": {
+      "provider": "sentence-transformers",
+      "pipeline_tag": "sentence-similarity",
+      "license": "apache-2.0",
+      "downloads": 253739900,
+      "likes": 5843,
+      "last_modified": null,
+      "tags": [
+        "sentence-transformers",
+        "pytorch",
+        "tf",
+        "rust",
+        "onnx",
+        "safetensors",
+        "openvino",
+        "bert",
+        "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "en",
+        "dataset:s2orc",
+        "dataset:flax-sentence-embeddings/stackexchange_xml",
+        "dataset:ms_marco"
+      ],
+      "related_tasks": [
+        "image-generation"
+      ]
+    },
+    "logo_url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/sentence-transformers/all-MiniLM-L6-v2.png"
+  },
+  {
+    "id": "326e04b0-e73c-51d5-984e-66149046bf44",
+    "entity_type": "task",
+    "name": "Code Generation",
+    "description": "Things you can do with AI related to code generation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "code-generation"
+    }
+  },
+  {
+    "id": "1b7dddda-8098-5452-9426-d674ccf730b7",
+    "entity_type": "task",
+    "name": "Image Generation",
+    "description": "Things you can do with AI related to image generation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "image-generation"
+    }
+  },
+  {
+    "id": "b5b143c0-aaaa-513b-9419-53169faa32f3",
+    "entity_type": "task",
+    "name": "Video Generation",
+    "description": "Things you can do with AI related to video generation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "video-generation"
+    }
+  },
+  {
+    "id": "712272bb-2680-53e9-9b00-dfbeeaaefb64",
+    "entity_type": "task",
+    "name": "Audio Generation",
+    "description": "Things you can do with AI related to audio generation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "audio-generation"
+    }
+  },
+  {
+    "id": "ee9cdbfa-e902-55d0-a43e-45cb685d298a",
+    "entity_type": "task",
+    "name": "Chat Assistant",
+    "description": "Things you can do with AI related to chat assistant.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "chat-assistant"
+    }
+  },
+  {
+    "id": "43cf2b72-f78a-5ec4-b5f6-5809be6c7433",
+    "entity_type": "task",
+    "name": "Summarization",
+    "description": "Things you can do with AI related to summarization.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "summarization"
+    }
+  },
+  {
+    "id": "6d737fe6-2fc8-5da4-8936-a9aa645d90c6",
+    "entity_type": "task",
+    "name": "Translation",
+    "description": "Things you can do with AI related to translation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "translation"
+    }
+  },
+  {
+    "id": "afa73c93-cd71-5ea1-9f7f-df69ae89bab4",
+    "entity_type": "task",
+    "name": "Data Analysis",
+    "description": "Things you can do with AI related to data analysis.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "data-analysis"
+    }
+  },
+  {
+    "id": "2b54bb07-cfeb-55e1-9546-5db91805e2e5",
+    "entity_type": "task",
+    "name": "Search Research",
+    "description": "Things you can do with AI related to search research.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "search-research"
+    }
+  },
+  {
+    "id": "59a7102f-f345-53d3-8a67-45cdea75ae2f",
+    "entity_type": "task",
+    "name": "Agent Automation",
+    "description": "Things you can do with AI related to agent automation.",
+    "url": "",
+    "categories": [
+      "Tasks"
+    ],
+    "source": {
+      "name": "Manual/Taxonomy",
+      "url": ""
+    },
+    "metadata": {
+      "slug": "agent-automation"
+    }
+  }
+]
