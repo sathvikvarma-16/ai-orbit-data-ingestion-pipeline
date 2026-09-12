@@ -12,8 +12,12 @@ def fetch_raw(query: str, limit: int = 25) -> list:
         print("  [youtube] no YOUTUBE_API_KEY set -- skipping this module")
         return []
     params = {
-        "part": "snippet", "q": query, "type": "video",
-        "maxResults": min(limit, 50), "order": "relevance", "key": key,
+        "part": "snippet",
+        "q": query,
+        "type": "video",
+        "maxResults": min(limit, 50),
+        "order": "relevance",
+        "key": key,
     }
     resp = get_with_retry(_API, params=params)
     if resp is None:

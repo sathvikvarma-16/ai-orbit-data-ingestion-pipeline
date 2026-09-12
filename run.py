@@ -9,13 +9,14 @@ import json
 from pathlib import Path
 
 from dotenv import load_dotenv
-load_dotenv()
+
+ROOT = Path(__file__).resolve().parent
+load_dotenv(dotenv_path=ROOT / ".env", override=False)
 
 from src.sources import github_source, huggingface_source, youtube_source, rss_source, seed_source
 from src.pipeline import clean, normalize_urls, dedupe, logos, classify, relationships as rel, describe, validate
 from src.export import to_json, to_csv
 
-ROOT = Path(__file__).parent
 SEED_DIR = ROOT / "data" / "seeds"
 FINAL_DIR = ROOT / "data" / "final"
 FINAL_DIR.mkdir(parents=True, exist_ok=True)

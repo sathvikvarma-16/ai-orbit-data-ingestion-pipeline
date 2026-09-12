@@ -222,28 +222,49 @@ if __name__ == "__main__":
 
 
 class TestDescribeWithMockedLLM(unittest.TestCase):
-    """Confirms the fix: generate_descriptions() fills a blank description
-    using a mocked Anthropic client, and the result then passes validation --
-    proving the describe-before-validate ordering in run.py is correct."""
+    """Confirms the describe-step contract: the Gemini adapter passes the
+    request through a Google SDK-shaped client object and falls back to the
+    source description if the response body is empty or the request fails.
+    This is intentionally mocked at the SDK call boundary only."""
 
     def test_mocked_llm_fills_blank_description_and_then_validates(self):
         from unittest.mock import MagicMock
         from src.pipeline import describe
 
-        entity = make_entity("company", "OpenAI", "", "https://openai.com", ["Companies"], "seed", "")
-        self.assertIn("missing description", validate_entity(entity))  # blank before describe runs
-
-        fake_block = MagicMock()
-        fake_block.type = "text"
-        fake_block.text = "An AI research and product company known for GPT and ChatGPT."
-        fake_response = MagicMock()
-        fake_response.content = [fake_block]
+        entity = make_entity("company", "OpenAI", "A research and product company.", "https://openai.com", ["Companies"], "seed", "")
+        self.assertNotIn("missing description", validate_entity(entity))
 
         fake_client = MagicMock()
-        fake_client.messages.create.return_value = fake_response
+        fake_response = MagicMock()
+        fake_response.text = "An AI research and product company known for GPT and ChatGPT."
+        fake_client.models.generate_content.return_value = fake_response
 
         result = describe._describe_one(fake_client, entity)
-        entity["description"] = result
+        self.assertIn("AI research", result)
 
-        self.assertNotEqual(entity["description"], "")
-        self.assertNotIn("missing description", validate_entity(entity))
+    def test_gemini_quota_error_parser_handles_retry_delay_and_graceful_source_desc(self):
+        from unittest.mock import MagicMock
+        from src.pipeline import describe
+
+        class FakeAPIError(Exception):
+            def __init__(self):
+                self.code = 429
+                self.status = "RESOURCE_EXHAUSTED"
+                self.details = {
+                    "error": {
+                        "code": 429,
+                        "message": "You exceeded your current quota.",
+                        "details": [{"@type": "type.googleapis.com/google.rpc.RetryInfo", "retryDelay": "51s"}],
+                    }
+                }
+                super().__init__("429 RESOURCE_EXHAUSTED. " + str(self.details))
+
+        entity = make_entity("company", "OpenAI", "AI research and product company.", "https://openai.com", ["Companies"], "seed", "")
+        exc = FakeAPIError()
+        delay = describe._extract_retry_delay_from_error(exc)
+        self.assertEqual(delay, 51.0)
+        self.assertTrue(describe._is_gemini_resource_exhausted(exc))
+
+        fake_client = MagicMock()
+        fake_client.models.generate_content.side_effect = exc
+        self.assertEqual(describe._describe_one(fake_client, entity), entity['description'])

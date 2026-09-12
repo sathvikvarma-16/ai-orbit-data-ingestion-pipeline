@@ -39,7 +39,7 @@ cp .env.example .env             # then fill in whichever keys you have
 |---|---|---|
 | `GITHUB_TOKEN` | repos / mcp / collections (works without it, capped at 60 req/hr vs 5000/hr) | github.com → Settings → Developer settings → Personal access tokens (no scopes needed, public read only) |
 | `YOUTUBE_API_KEY` | videos | console.cloud.google.com → enable "YouTube Data API v3" → Credentials |
-| `ANTHROPIC_API_KEY` | Step 3 (LLM descriptions) | console.anthropic.com |
+| `GEMINI_API_KEY` | Step 3 (LLM descriptions) | console.google.com / Google AI Studio |
 
 ## Running
 ```
@@ -92,7 +92,7 @@ research.
   first, verifies the response is really an image via a HEAD request, and
   falls back to Google's public favicon service (unofficial but free, no
   key, confirmed working as of Sep 2026) if scraping finds nothing.
-- **Descriptions**: one Anthropic API call per record, grounded only in facts
+- **Descriptions**: one Gemini API call per record, grounded only in facts
   already collected (the prompt explicitly forbids inventing details),
   threaded for speed. Runs *before* validation, since several seed records
   ship with a blank description for the LLM to fill — validating first would

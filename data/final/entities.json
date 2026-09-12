@@ -1,9 +1,32 @@
 [
   {
+    "id": "3c6eda5c-bf3e-59b5-9d02-885232a0533b",
+    "entity_type": "video",
+    "name": "The Only AI Tools You Need In 2026 (15-Minute Guide)",
+    "description": "Published by AW-TECHNOLOGIES on March 27, 2025, this video focuses on chat assistant AI tools. It includes a sponsored promotion offering 30% off the Chatty paid plan and references AI Master Hub.",
+    "url": "https://youtube.com/watch?v=OAUF574I7Gk",
+    "categories": [
+      "Videos"
+    ],
+    "source": {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/watch?v=OAUF574I7Gk"
+    },
+    "metadata": {
+      "channel": "AW-TECHNOLOGIES",
+      "published_at": "2025-03-27T05:04:18Z",
+      "thumbnail": "https://i.ytimg.com/vi/mh0R8xbFdnE/hqdefault.jpg",
+      "related_tasks": [
+        "chat-assistant"
+      ]
+    },
+    "logo_url": "https://www.youtube.com/s/desktop/e60429bd/img/favicon.ico"
+  },
+  {
     "id": "326e04b0-e73c-51d5-984e-66149046bf44",
     "entity_type": "task",
     "name": "Code Generation",
-    "description": "Things you can do with AI related to code generation.",
+    "description": "Explore things you can do with AI related to code generation.",
     "url": "",
     "categories": [
       "Tasks"
@@ -37,7 +60,7 @@
     "id": "b5b143c0-aaaa-513b-9419-53169faa32f3",
     "entity_type": "task",
     "name": "Video Generation",
-    "description": "Things you can do with AI related to video generation.",
+    "description": "Explore things you can do with AI related to video generation.",
     "url": "",
     "categories": [
       "Tasks"

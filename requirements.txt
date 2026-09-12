@@ -3,4 +3,4 @@ python-dotenv
 pyyaml
 feedparser
 beautifulsoup4
-anthropic
+google-genai

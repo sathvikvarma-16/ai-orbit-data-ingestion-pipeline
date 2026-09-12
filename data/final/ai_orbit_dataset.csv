@@ -1,7 +1,8 @@
 id,entity_type,name,description,url,logo_url,categories,source_name,source_url,metadata_json
-326e04b0-e73c-51d5-984e-66149046bf44,task,Code Generation,Things you can do with AI related to code generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""code-generation""}"
+3c6eda5c-bf3e-59b5-9d02-885232a0533b,video,The Only AI Tools You Need In 2026 (15-Minute Guide),"Published by AW-TECHNOLOGIES on March 27, 2025, this video focuses on chat assistant AI tools. It includes a sponsored promotion offering 30% off the Chatty paid plan and references AI Master Hub.",https://youtube.com/watch?v=OAUF574I7Gk,https://www.youtube.com/s/desktop/e60429bd/img/favicon.ico,Videos,YouTube,https://www.youtube.com/watch?v=OAUF574I7Gk,"{""channel"": ""AW-TECHNOLOGIES"", ""published_at"": ""2025-03-27T05:04:18Z"", ""thumbnail"": ""https://i.ytimg.com/vi/mh0R8xbFdnE/hqdefault.jpg"", ""related_tasks"": [""chat-assistant""]}"
+326e04b0-e73c-51d5-984e-66149046bf44,task,Code Generation,Explore things you can do with AI related to code generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""code-generation""}"
 1b7dddda-8098-5452-9426-d674ccf730b7,task,Image Generation,Things you can do with AI related to image generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""image-generation""}"
-b5b143c0-aaaa-513b-9419-53169faa32f3,task,Video Generation,Things you can do with AI related to video generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""video-generation""}"
+b5b143c0-aaaa-513b-9419-53169faa32f3,task,Video Generation,Explore things you can do with AI related to video generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""video-generation""}"
 712272bb-2680-53e9-9b00-dfbeeaaefb64,task,Audio Generation,Things you can do with AI related to audio generation.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""audio-generation""}"
 ee9cdbfa-e902-55d0-a43e-45cb685d298a,task,Chat Assistant,Things you can do with AI related to chat assistant.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""chat-assistant""}"
 43cf2b72-f78a-5ec4-b5f6-5809be6c7433,task,Summarization,Things you can do with AI related to summarization.,,,Tasks,Manual/Taxonomy,,"{""slug"": ""summarization""}"
