@@ -1,48 +1,5 @@
 [
   {
-    "id": "f1860198-6ce9-54c9-92bb-00f8a7c97500",
-    "entity_type": "model",
-    "name": "sentence-transformers/all-MiniLM-L6-v2",
-    "description": "zero-shot-image-classification",
-    "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
-    "categories": [
-      "Models"
-    ],
-    "source": {
-      "name": "Hugging Face",
-      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
-    },
-    "metadata": {
-      "provider": "sentence-transformers",
-      "pipeline_tag": "sentence-similarity",
-      "license": "apache-2.0",
-      "downloads": 253739900,
-      "likes": 5843,
-      "last_modified": null,
-      "tags": [
-        "sentence-transformers",
-        "pytorch",
-        "tf",
-        "rust",
-        "onnx",
-        "safetensors",
-        "openvino",
-        "bert",
-        "feature-extraction",
-        "sentence-similarity",
-        "transformers",
-        "en",
-        "dataset:s2orc",
-        "dataset:flax-sentence-embeddings/stackexchange_xml",
-        "dataset:ms_marco"
-      ],
-      "related_tasks": [
-        "image-generation"
-      ]
-    },
-    "logo_url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/sentence-transformers/all-MiniLM-L6-v2.png"
-  },
-  {
     "id": "326e04b0-e73c-51d5-984e-66149046bf44",
     "entity_type": "task",
     "name": "Code Generation",

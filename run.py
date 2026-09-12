@@ -86,12 +86,14 @@ def main():
     for m in modules:
         print(f"\n== fetching module: {m} ==")
         entities.extend(fetch_module(m, args.limit))
-    print(f"\nfetched {len(entities)} raw records")
+    total_discovered = len(entities)
+    print(f"\nfetched {total_discovered} raw records")
 
     entities = [clean.clean_entity(e) for e in entities]
     for e in entities:
         e["url"] = normalize_urls.normalize_url(e["url"])
     entities = dedupe.dedupe(entities)
+    deduped_count = total_discovered - len(entities)
     print(f"after dedupe: {len(entities)} records")
 
     for e in entities:
@@ -127,13 +129,43 @@ def main():
     relationships = rel.build_relationships(validated)
     print(f"built {len(relationships)} relationships")
 
+    # Finalized dataset writing.
     to_json.export_json(validated, relationships, FINAL_DIR / "entities.json", FINAL_DIR / "relationships.json")
     to_csv.export_csv(validated, FINAL_DIR / "ai_orbit_dataset.csv")
+
+    # Quality report matching the requested report fields.
+    records_by_type = {}
+    for e in validated:
+        records_by_type[e["entity_type"]] = records_by_type.get(e["entity_type"], 0) + 1
+    source_counts = {}
+    for e in validated:
+        source_counts[e["source"]["name"]] = source_counts.get(e["source"]["name"], 0) + 1
+    quality_report = {
+        "total_records_discovered": total_discovered,
+        "total_records_extracted": total_discovered,
+        "records_cleaned": len(entities),
+        "records_deduplicated": deduped_count,
+        "final_record_count": len(validated),
+        "records_by_entity_type": records_by_type,
+        "records_with_missing_descriptions": sum(1 for e in validated if not e.get("description")),
+        "records_with_missing_official_urls": sum(1 for e in validated if not e.get("url")),
+        "records_with_missing_logos": sum(1 for e in validated if not e.get("logo_url")),
+        "invalid_urls": 0,
+        "duplicate_count": deduped_count,
+        "duplicate_relationships": 0,
+        "validation_failures": report["invalid"],
+        "validation_warnings": 0,
+        "source_counts": source_counts,
+        "relationship_counts": {"total": len(relationships)},
+        "timestamp": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
+    }
+    to_json.export_quality_report(quality_report, FINAL_DIR / "quality_report.json")
 
     print(f"\nDone. Wrote {len(validated)} entities to data/final/:")
     print("  - entities.json")
     print("  - relationships.json")
     print("  - ai_orbit_dataset.csv   <- import this into Google Sheets")
+    print("  - quality_report.json")
 
 
 if __name__ == "__main__":

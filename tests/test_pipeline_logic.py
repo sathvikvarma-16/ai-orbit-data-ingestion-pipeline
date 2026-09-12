@@ -198,6 +198,25 @@ class TestRssParse(unittest.TestCase):
         self.assertEqual(e["source"]["name"], "Example Feed")
 
 
+class TestPolicyAndRelationshipQuality(unittest.TestCase):
+    def test_third_party_url_rejection_is_detected(self):
+        bad = make_entity("company", "Example", "desc", "https://www.crunchbase.com/org/example", ["Companies"], "seed", "")
+        issues = validate_entity(bad)
+        self.assertIn("third-party url", issues)
+
+    def test_duplicate_relationships_are_not_re_emitted(self):
+        company = make_entity("company", "Anthropic", "desc", "https://anthropic.com", ["Companies"], "seed", "")
+        repo = make_entity("repository", "anthropics/courses", "desc", "https://github.com/anthropics/courses", ["Repositories"], "GitHub", "https://github.com/anthropics/courses", metadata={"owner": "anthropics"})
+        rels = build_relationships([company, repo])
+        deduped = {(r["from"], r["relation"], r["to"]) for r in rels}
+        self.assertEqual(len(rels), len(deduped))
+
+    def test_relationships_reject_self_reference(self):
+        company = make_entity("company", "Anthropic", "desc", "https://anthropic.com", ["Companies"], "seed", "")
+        rels = build_relationships([company])
+        self.assertFalse(any(r["from"] == r["to"] for r in rels))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
 

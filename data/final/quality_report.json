@@ -1,0 +1,25 @@
+{
+  "total_records_discovered": 9,
+  "total_records_extracted": 9,
+  "records_cleaned": 9,
+  "records_deduplicated": 0,
+  "final_record_count": 10,
+  "records_by_entity_type": {
+    "task": 10
+  },
+  "records_with_missing_descriptions": 0,
+  "records_with_missing_official_urls": 10,
+  "records_with_missing_logos": 10,
+  "invalid_urls": 0,
+  "duplicate_count": 0,
+  "duplicate_relationships": 0,
+  "validation_failures": 9,
+  "validation_warnings": 0,
+  "source_counts": {
+    "Manual/Taxonomy": 10
+  },
+  "relationship_counts": {
+    "total": 0
+  },
+  "timestamp": "2026-09-12T14:54:56.508621+00:00"
+}
